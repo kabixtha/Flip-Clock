@@ -5,7 +5,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-flip-clock-secret-key-change-this-later'
 
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['*']
