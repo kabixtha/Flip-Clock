@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flip Clock</title>
+  <link rel="stylesheet" href="{% static 'clock/css/style.css' %}">
+</head>
+<body>
+
+<p class="title" id="title">FLIP CLOCK</p>
+<div class="main-row" id="mainRow"></div>
+
+<div class="anim-toggle">
+  <span id="lbl-flip" class="active">FLIP</span>
+  <label class="switch">
+    <input type="checkbox" id="animToggle" onchange="toggleAnim()">
+    <div class="slider"></div>
+  </label>
+  <span id="lbl-normal">NORMAL</span>
+</div>
+
+<div class="controls">
+  <button class="btn" id="bReset" onclick="doReset()" disabled>&#8635;</button>
+  <button class="btn" id="bStop"  onclick="doStop()"  disabled>&#9632;</button>
+  <button class="btn" id="bStart" onclick="doStart()" disabled>&#9654;</button>
+</div>
+<p class="status" id="status"></p>
+
+<nav class="nav">
+  <button class="active" onclick="setMode('clock',this)"><span class="ic">&#128336;</span><span>Clock</span></button>
+  <button onclick="setMode('sw',this)"><span class="ic">&#9201;</span><span>Stopwatch</span></button>
+  <button onclick="setMode('pom',this)"><span class="ic">&#127813;</span><span>Pomodoro</span></button>
+</nav>
+
+<script src="{% static 'clock/js/clock.js' %}"></script>
+</body>
+</html>
